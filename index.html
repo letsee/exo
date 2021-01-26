@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EXO</title>
+    <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <script src="https://cdn.letsee.io/webar/letsee-0.9.19.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:700|Roboto:400,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <link rel="stylesheet" href="css/layout.css">
+    <style media="place" type="text/css">
+        #container {
+            -letsee-target: uri('exo.json');
+            -letsee-position: coords(0, 0, 0);
+            width: 640px;
+            height: 360px;
+        }
+    </style>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130613011-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-130613011-3');
+  </script>
+
+</head>
+<body class="dummy">
+
+
+<div id="landscapeGuide">
+    <div class="wrap">
+        <div class="inner">
+            <img src="asset/landscape.svg">
+            <p>화면을 가로 방향으로<br>
+                돌려주세요</p>
+        </div>
+    </div>
+</div>
+<div id="loader">
+    <div class="wrap">
+        <div class="inner">
+            <!--<div><img src="asset/icon-picture.svg"></div>-->
+            <p>광고판을 정면으로 촬영해주세요</p>
+        </div>
+    </div>
+</div>
+<div class="dummy_img">
+    <img src="exo.jpg">
+</div>
+
+<div id="container" style="display: none;">
+    <div class="mainContent" id="chMenu">
+        <div id="nav">
+            <ul>
+                <li><a href="#" class="navBtn new" id="btn01"><span class="label">11.27 Release</span><img src="asset/icon-camera@2x.png"></a><span class="caption"><img src="asset/photo@2x.png"></span></li>
+                <li><a href="#" class="navBtn" id="btn02"><span class="label">11.27 Release</span><img src="asset/icon-youtube@2x.png"></a><span class="caption"><img src="asset/video@2x.png"></span></li>
+                <!--<li><a href="https://www.melon.com/artist/timeline.htm?artistId=724619" target="_blank" class="navBtn" id="btn03"><img src="asset/melon@2x.png"></a><span class="caption"><img src="asset/music@2x.png"></span></li>-->
+                <li><a href="https://www.melon.com/album/detail.htm?albumId=10357878" target="_blank" class="navBtn" id="btn03"><img src="asset/melon@2x.png"></a><span class="caption"><img src="asset/music@2x.png"></span></li>
+            </ul>
+        </div>
+
+        <div id="title">
+            <img src="asset/title.svg" alt="EXO OBSESSION">
+        </div>
+        <div id="counter" class="subBlock">
+            <div id="day"><span id="countDay">05</span><img src="asset/days.svg"></div>
+            <div id="hour">
+                <span id="countHour">01</span>
+                    <span class="separator">:</span>
+                <span id="countMin">38</span>
+                    <span class="separator">:</span>
+                <span id="countSec">25</span>
+            </div>
+
+        </div>
+        <div id="comeback" class="subBlock">
+            <img src="asset/comeback.svg">
+
+        </div>
+    </div>
+    <div class="mainContent" id="chSlider">
+        <div class="close"><a id="sliderClose" href="#"></a></div>
+        <div id="slider">
+            <div><img src="slider/1.jpg"></div>
+            <div><img src="slider/2.jpg"></div>
+            <div><img src="slider/3.jpg"></div>
+            <div><img src="slider/4.jpg"></div>
+            <div><img src="slider/5.jpg"></div>
+            <div><img src="slider/6.jpg"></div>
+            <div><img src="slider/7.jpg"></div>
+            <div><img src="slider/8.jpg"></div>
+            <div><img src="slider/9.jpg"></div>
+            <div><img src="slider/10.jpg"></div>
+            <div><img src="slider/11.jpg"></div>
+            <div><img src="slider/12.jpg"></div>
+            <div><img src="slider/13.jpg"></div>
+            <div><img src="slider/14.jpg"></div>
+        </div>
+    </div>
+    <div class="mainContent" id="chVideo">
+        <div class="close"><a id="videoClose" href="#"></a></div>
+        <div class="video">
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/uxmP4b2a0uY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="backdrop"></div>
+<script>
+  const countDownDate = new Date("Nov 27, 2019 18:00:00").getTime();
+  const durrentTime = new Date().getTime();
+  if((countDownDate - durrentTime) < 0) {
+    $('#comeback').show();
+    $('#counter').hide();
+  };
+
+  const config = {
+    "appKey": "abdc9d670bc3b103374306761da7f20f49f7f23ac57b39d012338fa849229a0f",
+    "trackerType": "IMAGE"
+  };
+  // Counter
+  const counterDay = document.getElementById('countDay');
+  const counterHour = document.getElementById('countHour');
+  const counterMin = document.getElementById('countMin');
+  const counterSec = document.getElementById('countSec');
+
+
+
+
+  // nav controll
+  let sliderFlag = false;
+  let loaderFlag = false;
+  const menu = $('#chMenu');
+  const slider = $('#chSlider');
+  const video = $('#chVideo');
+  const dissolve = (prev, next, speed = 200) => {
+    prev.fadeOut(speed);
+    next.fadeIn(speed);
+  };
+  $('#btn01').click(function() {
+    dissolve(menu, slider);
+    if (!sliderFlag) {
+      $('#slider').slick({
+        dots: true,
+        infinite: true,
+        arrows: false,
+        slidesToShow: 1,
+      });
+      sliderFlag = true;
+    }
+  });
+  $('#btn02').click(function() {
+    dissolve(menu, video);
+  });
+  $('#sliderClose').click(function() {
+    dissolve(slider, menu);
+  });
+  $('#videoClose').click(function() {
+    dissolve(video, menu);
+  });
+
+
+  const setNewContent = () => {
+    $('#comeback').show();
+    $('#counter').hide();
+    letsee.removeRenderModule('counter');
+  }
+
+  const getDigit = (val) => (val.toString().length === 1) ? `0${val}` : val;
+  const counterRenderer = (tick) => {
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+    counterDay.innerHTML = getDigit(Math.floor(distance / (1000 * 60 * 60 * 24)));
+    counterHour.innerHTML = getDigit(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+    counterMin.innerHTML = getDigit(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+    counterSec.innerHTML =  getDigit(Math.floor((distance % (1000 * 60)) / 1000));
+    if(distance < 0) setNewContent();
+  };
+
+  const exo = () => {
+    $('#loader').show();
+    slider.hide();
+    video.hide();
+    letsee.addRenderModule({
+      name: 'counter',
+      onRender: counterRenderer
+    });
+  };
+
+  letsee.init(config, exo);
+  letsee.onTrackStart(e => {
+    if (!loaderFlag) {
+      $('#loader').hide();
+      loaderFlag = true;
+    }
+  })
+</script>
+</body>
+</html>
