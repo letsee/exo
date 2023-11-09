@@ -199,6 +199,9 @@
     exo();
   
     letsee.onTrackStart(() => {
+      const parent = document.getElementById('container').parentNode;
+      parent.style.pointerEvents = 'none';
+      
       if (!loaderFlag) {
         $('#loader').hide();
         loaderFlag = true;
